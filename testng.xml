@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="C:/Users/grees/git/Projects/api_automation/src/test/java/httpmethods/GetMethod.java">
+        <groups>
+            <run>
+                <include name="p1"/>
+            </run>
+        </groups>
+        <classes>
+        <class name="httpmethods.GetMethod">
+            <methods>
+                <include name="testMethod"/>
+                <exclude name="excludeMethod"/>
+            </methods>
+        </class>
+        </classes>
+    </test>
+</suite>
