@@ -2,11 +2,10 @@ package com.utils;
 
 import com.google.gson.Gson;
 import com.model.*;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
+import org.testng.Assert;
 
-import java.util.HashMap;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
@@ -46,9 +45,9 @@ public class Utility {
         Response putResponse= given().log().all().baseUri("https://rahulshettyacademy.com").body(putPayload)
                 .when().put("/maps/api/place/update/json");
         System.out.println("put response "+putResponse.getBody().asString());
-        DeleteRequest deletepayload=new DeleteRequest();
-        deletepayload.setPlace_id(place_id);
-        Response delete=given().baseUri("https://rahulshettyacademy.com").body(deletepayload).queryParam("key","qaclick123").when().delete(" /maps/api/place/delete/json");
+        DeleteRequest deletePayload=new DeleteRequest();
+        deletePayload.setPlace_id(place_id);
+        Response delete=given().baseUri("https://rahulshettyacademy.com").body(deletePayload).queryParam("key","qaclick123").when().delete(" /maps/api/place/delete/json");
         System.out.println("delete response "+delete.getBody().asString());
         Gson gson=new Gson();
         return gson.fromJson(response.getBody().asString(),PostResponseModel.class);
