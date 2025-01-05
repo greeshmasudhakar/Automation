@@ -23,6 +23,7 @@ public class HandlingDynamicPayload {
        Response response= given().log().all().header("content-type","application/json").body(getPayload(author,name,isbn,aisle)).when()
                 .post("/Library/Addbook.php");
         System.out.println("response "+response.getBody().asString());
+
     }
 
     public String getPayload(String author,String name,String isbn, String aisle){
